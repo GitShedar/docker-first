@@ -1,0 +1,57 @@
+
+Story
+
+“But…. It was working on my laptop…” - what you will discover as soon as you start to work in a software company, is that while your code will always work fine on your laptop, most likely it will not be hosted from there… On your machine it is working like a charm - of course, you have spent months (years…) configuring the environment. Some parts of this environment has nothing to do with your application whatsoever (Excel, Photoshop, CS:GO…), some are necessary, but maybe not optimal (you do not need a complete Windows10 as an OS, but for sure need some of its functionalty) and there are a few “musthave”s - node, your depenedencies and your code for example. With docker, you can describe the bare minimum of requirements needed for your application to run - and then build a portable image, that contains all the dependencies, and can run anywhere. Do it, so that you can easily deploy it afterwards.
+What are you going to learn?
+
+    Dockerizing your application - make it ready to run anywhere
+    Publish your images to an artifact repository - store them on Dockerhub
+    Run and manage your images/applications in the cloud - get started with container orchestration
+    => Devops basics
+
+Tasks
+
+Dockerize the backend
+Describe an image in a Dockerfile that is derived from node, your whole app is added, and as a starting command runs your app exposed to the word on port 3000 - then build the image
+
+    ‘docker images’ shows your built image
+    ‘docker run’ -ing you application makes it listen on port 3000
+
+Dockerize the frontend
+Describe an image in a Dockerfile that is derived from nginx, add the static content to the proper folder - then build the image
+
+    ‘docker images’ shows your built image
+    ‘docker run’ -ing you application makes it listen on port 8080(!)
+
+Publish your apps (images)
+Tag your images with /my-first-fe and /my-first-be tags, then publish them to dockerhub
+
+    You can see your images at https://hub.docker.com/ when logged in
+
+Deploy your apps
+Login to sloppy admin, deploy and manage your images
+
+    Your app is available on .sloppy.zone
+    The log level on the backend can be changed with environment variables
+    The frontend app is served on two instances to handle the greater load
+
+General requirements
+
+    You have git and docker cli installed on your computer
+    You have an account at github and dockerhub
+    You have an account at sloppy.io
+
+Hints
+
+    You can stop your running docker containers with ‘docker stop’
+    When experimenting with docker, you will create a lot of useless images - check out how to delete both the containers and images easily, so you can keep order in your local repository
+
+Background materials
+
+    Docker - get started
+    Nginx - base image
+    NodeJS - base image
+    Container orchestration - admin app
+    Dockefile reference
+    Docker cli reference
+
